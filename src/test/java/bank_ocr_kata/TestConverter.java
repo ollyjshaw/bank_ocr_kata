@@ -9,13 +9,6 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: ollyshaw
- * Date: 21/03/2014
- * Time: 21:03
- * To change this template use File | Settings | File Templates.
- */
 public class TestConverter {
 
     @Test(expected = IncorrectNumberOfLinesException.class)
@@ -72,7 +65,7 @@ public class TestConverter {
     }
 
     @Test
-    public void testSplitting(){
+    public void testSplitting() {
 
     }
 }

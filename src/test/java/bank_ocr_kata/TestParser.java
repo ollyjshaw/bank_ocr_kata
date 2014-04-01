@@ -12,13 +12,6 @@ import java.util.List;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-/**
- * Created with IntelliJ IDEA.
- * User: ollyshaw
- * Date: 21/03/2014
- * Time: 19:44
- * To change this template use File | Settings | File Templates.
- */
 public class TestParser {
     Converter converter;
     List<String> lines;
@@ -26,7 +19,7 @@ public class TestParser {
     @Before
     public void setup() {
         converter = mock(Converter.class);
-         lines = Arrays.asList(new String[]{"bla1", "bla2", "bla3", "bla4"});
+        lines = Arrays.asList(new String[]{"bla1", "bla2", "bla3", "bla4"});
     }
 
     @Test
