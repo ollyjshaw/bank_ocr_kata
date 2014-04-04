@@ -23,7 +23,7 @@ public class TestParser {
     }
 
     @Test
-    public void testParserSendsEveryFourLinesToConverter() throws IncorrectLineLengthException, IncorrectNumberOfLinesException, NoBlankLineException {
+    public void testParserSendsEveryFourLinesToConverter() throws IncorrectLineLengthException, IncorrectNumberOfLinesException, NoBlankLineException, NotANumberException {
 
         Parser p = new Parser(converter);
         for (int ii = 0; ii < 4; ii++) {
@@ -34,7 +34,7 @@ public class TestParser {
     }
 
     @Test
-    public void testParserReadsLines() throws IncorrectLineLengthException, IncorrectNumberOfLinesException, NoBlankLineException {
+    public void testParserReadsLines() throws IncorrectLineLengthException, IncorrectNumberOfLinesException, NoBlankLineException, NotANumberException {
         String input = "bla1\nbla2\nbla3\nbla4\n";
         Parser p = new Parser(converter);
         p.parse(input);

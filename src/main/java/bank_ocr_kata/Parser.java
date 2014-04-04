@@ -17,7 +17,7 @@ public class Parser {
     }
 
 
-    public void receiveLine(String bla) throws IncorrectLineLengthException, IncorrectNumberOfLinesException, NoBlankLineException {
+    public void receiveLine(String bla) throws IncorrectLineLengthException, IncorrectNumberOfLinesException, NoBlankLineException, NotANumberException {
         buffer.add(bla);
 
         if (buffer.size() == 4) {
@@ -27,7 +27,7 @@ public class Parser {
 
     }
 
-    public void parse(String input) throws IncorrectLineLengthException, IncorrectNumberOfLinesException, NoBlankLineException {
+    public void parse(String input) throws IncorrectLineLengthException, IncorrectNumberOfLinesException, NoBlankLineException, NotANumberException {
         String[] lines = input.split("\n");
         for (String line : lines) {
             receiveLine(line);

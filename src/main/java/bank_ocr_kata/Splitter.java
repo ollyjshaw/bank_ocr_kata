@@ -7,6 +7,15 @@ public class Splitter {
     private static final int LENGTH = 27;
     private static final int NUMBER_WIDTH = 3;
 
+    public int solve(List<String> lines) throws NotANumberException {
+        List<Split> splits = split(lines);
+        StringBuilder stringAnswer = new StringBuilder();
+        for(Split split : splits){
+            stringAnswer.append(split.toInt());
+        }
+        return Integer.parseInt(stringAnswer.toString());
+    }
+
     public List<Split> split(List<String> lines) {
 
         List<Split> toReturn = new LinkedList<Split>();

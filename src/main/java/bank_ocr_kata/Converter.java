@@ -7,15 +7,14 @@ import bank_ocr_kata.exceptions.NoBlankLineException;
 import java.util.List;
 
 public class Converter {
-    public int convert(List<String> lines) throws IncorrectLineLengthException, IncorrectNumberOfLinesException, NoBlankLineException {
+    public int convert(List<String> lines) throws IncorrectLineLengthException, IncorrectNumberOfLinesException, NoBlankLineException, NotANumberException {
         //To change body of created methods use File | Settings | File Templates.
         if (lines == null) throw new NullPointerException();
         if(lines.size() != 4) throw new IncorrectNumberOfLinesException();
         if (linesNotCorrectLength(lines)) throw new IncorrectLineLengthException();
         if (!fourthLineEmpty(lines)) throw new NoBlankLineException();
         Splitter s = new Splitter();
-        s.split(lines);
-        return 9;
+        return s.solve(lines);
     }
 
     private boolean linesNotCorrectLength(List<String> lines) {
