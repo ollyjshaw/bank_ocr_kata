@@ -3,11 +3,11 @@ package bank_ocr_kata;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Splitter {
+class Splitter {
     private static final int LENGTH = 27;
     private static final int NUMBER_WIDTH = 3;
 
-    public int solve(List<String> lines) throws NotANumberException {
+    protected int solve(List<String> lines) throws NotANumberException {
         List<Split> splits = split(lines);
         StringBuilder stringAnswer = new StringBuilder();
         for(Split split : splits){
@@ -16,7 +16,7 @@ public class Splitter {
         return Integer.parseInt(stringAnswer.toString());
     }
 
-    public List<Split> split(List<String> lines) {
+    private List<Split> split(List<String> lines) {
 
         List<Split> toReturn = new LinkedList<Split>();
 

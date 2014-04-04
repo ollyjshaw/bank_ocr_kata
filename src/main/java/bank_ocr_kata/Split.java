@@ -3,7 +3,7 @@ package bank_ocr_kata;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Split {
+class Split {
 
     private static final String ZERO =
             " _ " +

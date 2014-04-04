@@ -8,21 +8,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Parser {
+    public static final int LINE_NUMBERS_PER_ACCOUNT = 4;
     List<String> buffer;
     Converter converter;
 
     public Parser(Converter converter) {
         this.converter = converter;
-        buffer = new ArrayList<String>(4);
+        buffer = newBuffer();
+    }
+
+    private ArrayList<String> newBuffer() {
+        return new ArrayList<String>(LINE_NUMBERS_PER_ACCOUNT);
     }
 
 
     public void receiveLine(String bla) throws IncorrectLineLengthException, IncorrectNumberOfLinesException, NoBlankLineException, NotANumberException {
         buffer.add(bla);
 
-        if (buffer.size() == 4) {
+        if (buffer.size() == LINE_NUMBERS_PER_ACCOUNT) {
             converter.convert(buffer);
-            buffer = new ArrayList<String>(4);
+            buffer.clear();
         }
 
     }
